@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/condorbg">
+        <TextView
+            android:id="@+id/coderef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mise à jour nécessaire !"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:fontFamily="@font/montserratr"
+            android:layout_marginBottom="10dp"
+            android:padding="2dp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/text"
+        android:textColor="@color/hanicondorcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_dialog"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserrat"
+        android:text="Des mises à jour sont disponibles ! \n Veuillez svp mettre à jour votre application."
+        android:textAlignment="center"
+        android:textSize="14sp" />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/text"
+    android:layout_centerHorizontal="true"
+>
+
+    <Button
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mettre à jour"
+        android:id="@+id/ok_btn"
+        android:shadowColor="@android:color/transparent"
+        android:padding="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:textColor="#fff"
+        android:fontFamily="@font/montserratr"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:layout_toRightOf="@+id/ok_btn"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quitter"
+        android:id="@+id/close_btn"
+        android:shadowColor="@android:color/transparent"
+        android:padding="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:textColor="#fff"
+        android:fontFamily="@font/montserratr"
+        android:textAllCaps="false"
+        />
+
+
+</RelativeLayout>
+
+</RelativeLayout>

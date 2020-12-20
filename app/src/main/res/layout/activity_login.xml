@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:padding="0dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/animation_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/app_logo"
+            />
+
+    </RelativeLayout>
+
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:background="@drawable/shapeemail"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:drawablePadding="10dp"
+        android:hint="@string/hint_email"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="#051A42"
+        android:textColorHint="#99051A42"
+        android:textColorHighlight="@color/colorSelection"
+        android:fontFamily="@font/montserratr"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="15dp"
+        android:background="@drawable/shapeemail"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:fontFamily="@font/montserratr"
+        android:textColor="#051A42"
+        android:textColorHint="#99051A42"
+        android:textColorHighlight="@color/colorSelection"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/rememberme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remember_me"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:textColor="#051A42"
+            android:buttonTint="#051A42"
+            android:fontFamily="@font/montserratr"
+            android:checked="true"/>
+        <TextView
+            android:id="@+id/forgetpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forget_password"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:textColor="#051A42"
+            android:fontFamily="@font/montserratr"
+            android:drawableLeft="@drawable/ic_lock_open_black_24dp"
+            android:drawablePadding="6dp"
+            android:padding="4dp"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in"
+            android:shadowColor="@android:color/transparent"
+            android:padding="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratr"
+            android:textAllCaps="false"
+            />
+        <TextView
+            android:layout_below="@+id/login"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="0dp"
+            android:textColor="#051A42"
+            android:fontFamily="@font/montserratr"
+            android:padding="4dp"
+            android:textSize="16dp"
+            />
+        <TextView
+            android:layout_below="@+id/app_version"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:id="@+id/app_tandc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voir nos conditions d'utilisation et politique de confidentialité"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#051A42"
+            android:fontFamily="@font/montserratr"
+            android:padding="4dp"
+            android:textSize="16dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#051A42"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="6dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/backbtn" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stock"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:fontFamily="@font/montserrat"/>
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_search"
+        />
+
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_toRightOf="@+id/back"
+        android:layout_toLeftOf="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        app:iconifiedByDefault="false"
+        android:textCursorDrawable="@drawable/costum_search_cursor"
+        app:searchIcon="@null"
+        android:queryHint="@string/hint_recherche_pv"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/mtext_color"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.IncentiveActivity">
+    <include
+        android:id="@+id/incentive_page_toolbar"
+        layout="@layout/incentive_bar_layout" />
+
+    <RelativeLayout
+        android:layout_below="@+id/incentive_page_toolbar"
+        android:id="@+id/frag_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:baselineAligned="false"
+            >
+
+            <RelativeLayout
+                android:id="@+id/m_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:elevation="3dp"
+                    >
+
+
+
+                    <RelativeLayout
+                        android:background="@drawable/r_incentive_box"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/incentive_header"
+                        android:background="@drawable/incentive_box"
+                        android:paddingLeft="50dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="10">
+
+
+
+                        <TextView
+                            android:layout_marginTop="40dp"
+                            android:id="@+id/dzd"
+                            android:layout_alignRight="@+id/inc"
+                            android:textColor="#051A42"
+                            android:textSize="16dp"
+                            android:fontFamily="@font/montserrat"
+                            android:text="  DZD"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_toLeftOf="@+id/dzd"
+                            android:layout_marginTop="20dp"
+                            android:textColor="#051A42"
+                            android:textSize="32dp"
+                            android:id="@+id/incentive_value"
+                            android:fontFamily="@font/montserrat"
+                            android:text="0.00"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            />
+
+                        <View
+                            android:layout_below="@+id/incentive_value"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="15dp"
+                            android:id="@+id/veiw_id"
+                            android:layout_width="100dp"
+                            android:layout_height="2dp"
+                            android:fontFamily="@font/montserrat"
+                            android:background="#051A42"
+                            android:layout_alignParentLeft="true"
+                            />
+                        <TextView
+                            android:id="@+id/inc"
+                            android:layout_below="@+id/incentive_value"
+                            android:layout_toRightOf="@+id/veiw_id"
+                            android:textColor="#051A42"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/montserrat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Incentive"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/month"
+                            android:layout_alignRight="@+id/inc"
+                            android:layout_below="@+id/inc"
+                            android:textColor="#051A42"
+                            android:textSize="12dp"
+                            android:fontFamily="@font/montserrat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textStyle="bold"
+                            android:layout_marginBottom="15dp"
+                            />
+
+
+
+                    </RelativeLayout>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/m_top"
+                android:id="@+id/m_mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ListView
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="5dp"
+                    android:background="#f9f8f8"
+                    android:divider="@null"
+                    android:id="@+id/list_view_notchecked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+            <!--  separator  -->
+            <LinearLayout
+                android:id="@+id/separator"
+                android:layout_below="@+id/m_mid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:id="@+id/lay1"
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+         >
+                <View
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#051A42"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Incentives Encaissés "
+                    android:textAlignment="center"
+                    android:textColor="#051A42"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lay3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+               >
+
+                <View
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#051A42"
+                    />
+
+            </RelativeLayout>
+            </LinearLayout>
+            <!--  /separator  -->
+
+            <RelativeLayout
+                android:layout_below="@+id/separator"
+                android:id="@+id/m_bot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ListView
+                    android:paddingTop="5dp"
+                    android:background="#f9f8f8"
+                    android:divider="@null"
+                    android:id="@+id/list_view_checked"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

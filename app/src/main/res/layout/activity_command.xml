@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CommandActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        >
+        <include layout="@layout/command_bar_layout" android:id="@+id/main_page_toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+<RelativeLayout
+    android:layout_below="@+id/main_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100"
+        android:orientation="vertical"
+    >
+        <RelativeLayout  android:layout_height="0dp" android:layout_width="wrap_content" android:layout_weight="10">
+
+            <LinearLayout
+               android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+                <RelativeLayout
+                    android:background="#051A42"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </RelativeLayout>
+                <RelativeLayout
+                    android:background="#051A42"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    >
+
+                    <TextView
+                        android:id="@+id/comercial_name"
+                        android:text="Total : "
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textSize="18dp"
+                        android:textColor="#fff"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:paddingRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/item_stocklist_box"
+                    android:layout_weight="30">
+
+
+                    <TextView
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:id="@+id/total"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="#051A42"
+                        android:text="#### DZD"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_height="0dp" android:layout_width="wrap_content" android:layout_weight="80">
+
+            <ListView
+                android:paddingTop="5dp"
+                android:background="#f9f8f8"
+                android:divider="@null"
+                android:id="@+id/command_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/loading_bar"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:indicator="LineScaleParty"
+                app:indicator_color="@color/hanicondorcolor" />
+
+        </RelativeLayout>
+    <RelativeLayout android:layout_height="0dp" android:layout_width="wrap_content" android:layout_weight="10">
+
+
+
+        <Button
+
+            android:id="@+id/done_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terminé"
+            android:shadowColor="@android:color/transparent"
+            android:padding="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratr"
+            android:textAllCaps="false"
+
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
+</RelativeLayout>

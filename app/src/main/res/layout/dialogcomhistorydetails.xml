@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/condorbg">
+        <TextView
+            android:id="@+id/coderef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:fontFamily="@font/montserratr"
+            android:layout_marginBottom="10dp"
+            android:padding="2dp"
+            />
+    </RelativeLayout>
+    <ListView
+        android:layout_below="@+id/title_dialog"
+        android:paddingTop="5dp"
+        android:background="#f9f8f8"
+        android:divider="@null"
+        android:id="@+id/command_h_d_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="60dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fermer"
+        android:id="@+id/close_btn"
+        android:layout_below="@+id/command_h_d_list_view"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="@android:color/transparent"
+        android:padding="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-60dp"
+        android:background="@drawable/button"
+        android:textColor="#fff"
+        android:fontFamily="@font/montserratr"
+        android:textAllCaps="false"
+        />
+
+</RelativeLayout>

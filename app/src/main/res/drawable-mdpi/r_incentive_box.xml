@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Drop Shadow Stack -->
+    <item>
+        <shape>
+            <corners
+
+                android:bottomLeftRadius="20dp"
+                android:topLeftRadius="20dp"
+                />
+
+            <padding
+                android:bottom="1dp"
+                 android:left="1dp"
+
+                android:top="1dp" />
+
+            <solid android:color="#1AC9C9C9" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners
+                android:bottomLeftRadius="20dp"
+                android:topLeftRadius="20dp"  />
+
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+
+                android:top="1dp"  />
+
+            <solid android:color="#4DC9C9C9" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners
+                android:bottomLeftRadius="20dp"
+                android:topLeftRadius="20dp"  />
+
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+
+                android:top="1dp"  />
+
+            <solid android:color="#80C9C9C9" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners
+                android:bottomLeftRadius="18dp"
+                android:topLeftRadius="18dp"
+               />
+
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+
+                android:top="1dp" />
+
+            <solid android:color="#B3C9C9C9" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners
+                android:bottomLeftRadius="20dp"
+                android:topLeftRadius="20dp" />
+
+            <padding
+                android:bottom="1dp"
+                android:left="1dp"
+
+                android:top="1dp"  />
+
+            <solid android:color="#c9c9c9" />
+        </shape>
+    </item>
+
+    <!-- Background -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="270"
+                android:startColor="#051A42"
+                android:endColor=  "#051A42"
+                />
+
+            <corners  android:bottomLeftRadius="20dp"
+                android:topLeftRadius="20dp" />
+        </shape>
+    </item>
+
+</layer-list>

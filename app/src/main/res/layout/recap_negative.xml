@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:cacheColorHint="@android:color/transparent"
+
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        >
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:cacheColorHint="@android:color/transparent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/photo"
+                android:src="@drawable/sample_1"
+                android:layout_margin="10dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="@android:color/transparent"
+                />
+
+            <RelativeLayout
+
+                android:layout_toRightOf="@+id/photo"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="@android:color/transparent"
+                >
+
+                <TextView
+                    android:id="@+id/sn"
+
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:cacheColorHint="@android:color/transparent"
+                    />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/sn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:cacheColorHint="@android:color/transparent"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

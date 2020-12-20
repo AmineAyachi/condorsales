@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+   >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <ImageView
+            android:id="@+id/mylogo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/app_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            />
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mylogo"
+            android:text="Chargement"
+            android:textColor="#051A42"
+            android:fontFamily="@font/montserratr"
+            android:textSize="30sp" />
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_below="@id/text"
+            android:id="@+id/loading_bar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:indicator="LineScaleParty"
+            app:indicator_color="#051A42" />
+
+    </RelativeLayout>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="18sp"
+        android:textColor="#051A42"
+        android:fontFamily="@font/montserratr"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single"
+        >
+    <item
+        android:checked="true"
+        android:id="@+id/acceuil"
+        app:actionLayout="@layout/drawer_menu_acceuil"
+        />
+        <item
+            android:checked="true"
+            android:id="@+id/incentive"
+            app:actionLayout="@layout/drawer_menu_incentive"
+            />
+        <item
+            android:checked="true"
+            android:id="@+id/achat"
+            app:actionLayout="@layout/drawer_menu_achat"
+            />
+
+        <item
+            android:checked="true"
+            android:id="@+id/vente"
+            app:actionLayout="@layout/drawer_menu_vente"
+            />
+
+        <item
+            android:checked="true"
+            android:id="@+id/about"
+            app:actionLayout="@layout/drawer_menu_about"
+            />
+        <item
+            android:checked="true"
+            android:id="@+id/logout"
+            app:actionLayout="@layout/drawer_menu_logout"
+            />
+    </group>
+</menu>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:layout_marginLeft="-5dp"
+    android:layout_marginRight="-5dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/top_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/close_drawer"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/d_back"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:paddingBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/top_rl"
+        android:id="@+id/bot_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_border"
+        android:layout_marginBottom="2dp"
+
+        >
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/profile_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/d_profile"
+            />
+        <TextView
+            android:layout_below="@+id/profile_img"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Profil"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:textColor="#0C0C0C"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

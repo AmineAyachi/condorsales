@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/control_overview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="center_horizontal|top"
+
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#55585A" />
+    <TextView
+        android:id="@+id/new_offers_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#051A42"
+        android:padding="15dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="            news      ✸✸✸      news            news          news     ✸✸✸     news          news   "
+        android:textColor="@color/White"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat"
+
+        />
+</LinearLayout>

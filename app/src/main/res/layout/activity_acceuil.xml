@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AcceuilActivity">
+
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/mdrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/main_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            >
+            <include layout="@layout/app_bar_layout" android:id="@+id/main_page_toolbar"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_below="@+id/main_bar_layout"
+                android:id="@+id/frag_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:baselineAligned="false"
+                   >
+
+                    <RelativeLayout
+                        android:id="@+id/m_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:elevation="3dp"
+                            >
+
+
+
+                            <RelativeLayout
+                                android:background="@drawable/r_incentive_box"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"></RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/incentive_header"
+                                android:background="@drawable/incentive_box"
+                                android:paddingLeft="50dp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="10">
+
+
+
+                                <TextView
+                                    android:layout_marginTop="40dp"
+                                    android:id="@+id/dzd"
+                                    android:layout_alignRight="@+id/inc"
+                                    android:textColor="#051A42"
+                                    android:textSize="16dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="  DZD"
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:layout_toLeftOf="@+id/dzd"
+                                    android:layout_marginTop="20dp"
+                                    android:textColor="#051A42"
+                                    android:textSize="32dp"
+                                    android:id="@+id/incentive_value"
+                                    android:fontFamily="@font/montserrat"
+                                    android:text="100.00"
+                                    android:textStyle="bold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    />
+
+                                <View
+                                    android:layout_below="@+id/incentive_value"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="15dp"
+                                    android:id="@+id/veiw_id"
+                                    android:layout_width="100dp"
+                                    android:layout_height="2dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:background="#051A42"
+                                    android:layout_alignParentLeft="true"
+                                    />
+                                <TextView
+                                    android:id="@+id/inc"
+                                    android:layout_below="@+id/incentive_value"
+                                    android:layout_toRightOf="@+id/veiw_id"
+                                    android:textColor="#051A42"
+                                    android:textSize="20dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Incentive"
+                                    android:layout_marginBottom="20dp"
+                                    />
+
+
+
+                            </RelativeLayout>
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/m_top"
+                        android:id="@+id/m_mid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/m_mid_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false">
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/fm_buy"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:src="@drawable/reception"
+                               />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Reception"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/fm_buy"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:textColor="#55585A"
+                                    />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/fm_sell"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:src="@drawable/vente"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Vente"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/fm_sell"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:textColor="#55585A"
+                                    />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+
+                            android:layout_below="@+id/m_mid_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:baselineAligned="false">
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_marginTop="50dp"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/stock"
+
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:src="@drawable/stock"
+                                 />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:fontFamily="@font/montserrat"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stock"
+                                    android:textStyle="bold"
+                                    android:elevation="3dp"
+                                    android:textSize="16dp"
+                                    android:layout_below="@+id/stock"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="#55585A"
+
+                                    />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:id="@+id/command"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:src="@drawable/cammand"
+                                   />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Commande"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/command"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:textColor="#55585A"
+
+                                    />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    android:id="@+id/historique"
+                                    android:src="@drawable/historique"
+                                   />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Historique"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:layout_below="@+id/historique"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:fontFamily="@font/montserrat"
+                                    android:textColor="#55585A"
+                                    />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/m_mid"
+                        android:id="@+id/m_bot"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <include
+                            android:id="@+id/view_bottom_news"
+                            layout="@layout/view_bottom_mob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E6FFFFFF"
+            app:menu="@menu/menu"
+            app:headerLayout="@layout/drawer_header"
+            app:itemBackground="@drawable/background_border"
+            android:theme="@style/NavigationTheme"
+            android:layout_gravity="start"
+            >
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</RelativeLayout>

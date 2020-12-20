@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="10dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/title_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/condorbg">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Changement de la quantité"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:fontFamily="@font/montserratr"
+            android:layout_marginBottom="10dp"
+            android:padding="2dp"
+            />
+    </RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/title_dialog"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/q_text"
+        android:paddingTop="5dp"
+        android:paddingBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La quantité"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratr"
+        />
+    <it.sephiroth.android.library.numberpicker.NumberPicker
+        android:layout_below="@+id/q_text"
+        style="@style/NumberPicker.Outlined"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        app:picker_max="1000"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/quantity_spinner"
+        app:picker_min="1"
+        android:progress="1"
+        app:picker_stepSize="1"
+        app:picker_tracker="exponential"
+        app:picker_orientation="vertical"
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+<RelativeLayout
+    android:layout_marginTop="10dp"
+    android:layout_below="@+id/quantity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:layout_marginRight="5dp"
+            android:id="@+id/close_btn"
+            android:shadowColor="@android:color/transparent"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratr"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:layout_toRightOf="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sauvgarder"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/save_btn"
+            android:layout_marginLeft="5dp"
+            android:shadowColor="@android:color/transparent"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratr"
+            android:textAllCaps="false"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+</RelativeLayout>
+
+
+</RelativeLayout>

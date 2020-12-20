@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "839274361002",
+    "firebase_url": "https://condorsales-1bfb9.firebaseio.com",
+    "project_id": "condorsales-1bfb9",
+    "storage_bucket": "condorsales-1bfb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839274361002:android:d1662896eed1cc9e4820d3",
+        "android_client_info": {
+          "package_name": "condor.sales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839274361002-fv6ijah5mtos5lm9drq0ehn752njutje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "condor.sales",
+            "certificate_hash": "5f75f7021ca5dc91db915988c037edb19fc7e817"
+          }
+        },
+        {
+          "client_id": "839274361002-bglfg323cju8m3c9euj2rephare74bli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Vioa25cU8khU5ubFmtNRI9_jJvF7pDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839274361002-bglfg323cju8m3c9euj2rephare74bli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
