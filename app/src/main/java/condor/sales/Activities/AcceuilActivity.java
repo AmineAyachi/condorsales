@@ -33,6 +33,9 @@ import com.google.firebase.iid.InstanceIdResult;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.sanojpunchihewa.updatemanager.UpdateManager;
+import com.sanojpunchihewa.updatemanager.UpdateManagerConstant;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +47,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import condor.sales.Constants;
 import condor.sales.Login.LoginActivity;
@@ -106,7 +111,7 @@ import static condor.sales.Utils.Utils.saveUsers;
     private Handler mHandler = new Handler();
     private TextView incentive ;
     static View view_news;
-
+    UpdateManager mUpdateManager;
     // TODO: 23-03-2020  incentive should have history directly here and not in history activity i will work on that too.
     Runnable runnable;
     SweetAlertDialog mSyncEncours;
@@ -139,6 +144,9 @@ import static condor.sales.Utils.Utils.saveUsers;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
+        mUpdateManager = UpdateManager.Builder(this).mode(UpdateManagerConstant.IMMEDIATE);
+        mUpdateManager.start();
+
         FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
             @Override
             public void onComplete(@NonNull Task<InstanceIdResult> task) {
@@ -148,7 +156,14 @@ import static condor.sales.Utils.Utils.saveUsers;
 
                     Log.e( "token fb : ",token );
 
-                    OkHttpClient clientfb = new OkHttpClient();
+                    OkHttpClient clientfb = new OkHttpClient.Builder()
+                            .connectTimeout(20, TimeUnit.SECONDS)
+                            .callTimeout(30, TimeUnit.SECONDS)
+                            .writeTimeout(30, TimeUnit.SECONDS)
+                            .readTimeout(30, TimeUnit.SECONDS)
+                            .retryOnConnectionFailure(false)
+                            .build();
+
 
                     RequestBody requestBodyfb = new MultipartBody.Builder()
                             .setType(MultipartBody.FORM)
@@ -225,7 +240,14 @@ import static condor.sales.Utils.Utils.saveUsers;
         closedrawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDrawer.closeDrawer(Gravity.LEFT);
+
+                if (mDrawer.isDrawerOpen(Gravity.LEFT)) {
+
+                    mDrawer.closeDrawer(Gravity.LEFT);
+
+                }
+
+
             }
         });
 
@@ -233,7 +255,14 @@ import static condor.sales.Utils.Utils.saveUsers;
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDrawer.closeDrawer(Gravity.LEFT);
+
+                if (mDrawer.isDrawerOpen(Gravity.LEFT)) {
+
+                    mDrawer.closeDrawer(Gravity.LEFT);
+
+                }
+
+
                 profile();
 
             }
@@ -387,7 +416,10 @@ import static condor.sales.Utils.Utils.saveUsers;
     }
 
     public void historique () {
-        mDrawer.closeDrawer(Gravity.LEFT);
+        if (mDrawer.isDrawerOpen(Gravity.LEFT)) {
+            mDrawer.closeDrawer(Gravity.LEFT);
+        }
+
         Intent myIntent = new Intent(AcceuilActivity.this, HistoriqueActivity.class);
         startActivity(myIntent);
 
@@ -478,7 +510,13 @@ import static condor.sales.Utils.Utils.saveUsers;
 
 
 
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .callTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
+                .build();
 
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
@@ -499,7 +537,7 @@ import static condor.sales.Utils.Utils.saveUsers;
             @Override
             public void onFailure(Call call, IOException e) {
                 // inser shared pref actualite last
-                //Log.e("onFailure", "" + e);
+                Log.e("onFailure", "" + e);
 
                 showToastFromBackground("nointernet");
                 closeDialogLoading();
@@ -832,7 +870,13 @@ import static condor.sales.Utils.Utils.saveUsers;
     }
 
     public void incentive () {
-        mDrawer.closeDrawer(Gravity.LEFT);
+        if (mDrawer.isDrawerOpen(Gravity.LEFT)) {
+
+            mDrawer.closeDrawer(Gravity.LEFT);
+
+        }
+
+
         Intent myIntent = new Intent(AcceuilActivity.this, IncentiveActivity.class);
         startActivity(myIntent);
 //        DialogIncentiveHistory dih = new DialogIncentiveHistory(AcceuilActivity.this);

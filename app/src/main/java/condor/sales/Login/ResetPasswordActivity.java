@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import condor.sales.Constants;
 import condor.sales.R;
@@ -142,7 +144,13 @@ public class ResetPasswordActivity extends AppCompatActivity {
         }else{
             showDialogLoading();
 
-            OkHttpClient client = new OkHttpClient();
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(20, TimeUnit.SECONDS)
+                    .callTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .retryOnConnectionFailure(false)
+                    .build();
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)

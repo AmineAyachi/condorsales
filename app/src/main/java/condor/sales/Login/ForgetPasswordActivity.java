@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import condor.sales.Constants;
 import condor.sales.R;
@@ -94,13 +96,14 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 //                        Dialog_Connexion cdd=new Dialog_Connexion( Splash.this);
 //                        cdd.setCancelable(false);
 //                        cdd.show();
+                        Log.e("usernotfound","usernotfound");
                         send_btn.setEnabled(true);
                         lastToast = Toast.makeText(ForgetPasswordActivity.this, "Votre code pos n'est pas autorisé à accéder à ce service. merci de contacter l'administrateur", Toast.LENGTH_LONG);
                         lastToast.show();
 
                     }
                     if (message.equals("codesent")) {
-
+                        Log.e("codesent","codesent");
                         lastToast = Toast.makeText(ForgetPasswordActivity.this, "Le code de vérification a bien été envoyé à votre e-mail", Toast.LENGTH_LONG);
                         lastToast.show();
 
@@ -133,7 +136,13 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         if(!code.isEmpty()){
 
             showDialogLoading();
-            OkHttpClient client = new OkHttpClient();
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(20, TimeUnit.SECONDS)
+                    .callTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .retryOnConnectionFailure(false)
+                    .build();
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)

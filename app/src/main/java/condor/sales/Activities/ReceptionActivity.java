@@ -34,6 +34,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import condor.sales.Dialogs.DialogRecapReception;
 import condor.sales.Login.LoginActivity;
@@ -246,7 +248,13 @@ public class ReceptionActivity extends AppCompatActivity {
         gsonBuilder.serializeNulls();
         Gson gson = gsonBuilder.create();
         String locallist_json =  gson.toJson(locallist);
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .callTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
+                .build();
 
 
         RequestBody requestBody = new MultipartBody.Builder()

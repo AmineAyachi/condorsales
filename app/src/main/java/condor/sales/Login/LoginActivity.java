@@ -25,6 +25,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.sanojpunchihewa.updatemanager.UpdateManager;
+import com.sanojpunchihewa.updatemanager.UpdateManagerConstant;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
@@ -32,6 +36,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import condor.sales.Activities.TermsAndConditionActivity;
 import condor.sales.Dialogs.DialogNewUpdate;
@@ -69,11 +74,15 @@ public class LoginActivity extends AppCompatActivity {
     int count = 0;
     SharedPreferences prefLogin;
     SharedPreferences.Editor editprefLogin;
+    UpdateManager mUpdateManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mUpdateManager = UpdateManager.Builder(this).mode(UpdateManagerConstant.IMMEDIATE);
+        mUpdateManager.start();
+
         get_list_users();
         mEmail = findViewById(R.id.email);
         mApp_version = findViewById(R.id.app_version);
@@ -329,7 +338,13 @@ public class LoginActivity extends AppCompatActivity {
 
             Log.e("starting", "startinglogin ********************************************************** MODE ONLINE");
 
-            OkHttpClient client = new OkHttpClient();
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .connectTimeout(20, TimeUnit.SECONDS)
+                    .callTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .retryOnConnectionFailure(false)
+                    .build();
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
@@ -514,7 +529,13 @@ public class LoginActivity extends AppCompatActivity {
 
     private void fct_get_UserInfo(String user_email, final String user_password, final String user_token) {
 
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .callTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
+                .build();
 
 //        Log.e("fct_get_UserInfo", "fct_get_UserInfo"  );
 //        Log.e("url_API", "url_API ***************-----> " + url_API);

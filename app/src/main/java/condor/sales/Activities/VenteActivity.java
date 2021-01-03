@@ -308,15 +308,19 @@ public class VenteActivity extends AppCompatActivity {
         for (final Incentive incentive : incetives) {
 
 
-            if(incentive.getMonth() == c.get(Calendar.MONTH) && incentive.getYear() == c.get(Calendar.YEAR)){
+            if(incentive.getMonth() == c.get(Calendar.MONTH)+1 && incentive.getYear() == c.get(Calendar.YEAR)+1){
                 finder= true;
                 incentive.setIncentive(incentive.getIncentive()+value);
+                Log.e(" 1 Calendar.MONTH", "c.get(Calendar.MONTH)"+c.get(Calendar.MONTH)+"incentive.getMonth()"+incentive.getMonth());
+                Log.e(" 1 Calendar.YEAR", "c.get(Calendar.YEAR)"+c.get(Calendar.YEAR)+"incentive.getYear()"+incentive.getYear());
             }
 
         }
         if(finder == false){
-            Incentive incentive = new Incentive(c.get(Calendar.YEAR),c.get(Calendar.MONTH) ,value,false);
+            Incentive incentive = new Incentive(c.get(Calendar.YEAR)+1,c.get(Calendar.MONTH)+1 ,value,false);
             Constants.Incentive.add(incentive);
+            Log.e(" 2 Calendar.MONTH", "c.get(Calendar.MONTH)"+c.get(Calendar.MONTH)+"incentive.getMonth()"+incentive.getMonth());
+            Log.e(" 2 Calendar.YEAR", "c.get(Calendar.YEAR)"+c.get(Calendar.YEAR)+"incentive.getYear()"+incentive.getYear());
         }
 
         saveIncentive( Constants.Incentive,VenteActivity.this);
