@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+
+import com.sanojpunchihewa.updatemanager.UpdateManager;
+import com.sanojpunchihewa.updatemanager.UpdateManagerConstant;
 import com.wang.avi.AVLoadingIndicatorView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -20,12 +23,14 @@ public class SplashScreen extends AppCompatActivity {
 
     int secondsDelayed = 2;
     private AVLoadingIndicatorView progressBar;
-
+    UpdateManager mUpdateManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        mUpdateManager = UpdateManager.Builder(this).mode(UpdateManagerConstant.IMMEDIATE);
+        mUpdateManager.start();
 
         Constants.custom_font = ResourcesCompat.getFont(this, R.font.montserratr);
         progressBar = findViewById(R.id.loading_bar);
